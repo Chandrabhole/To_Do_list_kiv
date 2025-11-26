@@ -1,0 +1,42 @@
+<ToDoLayout>:
+    orientation: "vertical"
+    padding: 10
+    spacing: 10
+
+    TextInput:
+        id: task_input
+        hint_text: "Enter Task"
+        size_hint_y: None
+        height: 40
+
+    Button:
+        text: "Add Task"
+        size_hint_y: None
+        height: 45
+        on_release: root.add_task()
+
+    Label:
+        id: display
+        text: root.task_display
+        font_size: 18
+        halign: "left"
+        valign: "top"
+        text_size: self.size
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        spacing: 10
+
+        TextInput:
+            id: task_no
+            hint_text: "Task No"
+            size_hint_x: .3
+
+        Button:
+            text: "Complete"
+            on_release: root.mark_completed()
+
+        Button:
+            text: "Delete"
+            on_release: root.delete_task()
